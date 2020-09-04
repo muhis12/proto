@@ -9,41 +9,39 @@ function tarkastaEtumerkki()
     document.getElementById('tulosta1').innerHTML = "Luku on negatiivinen";
   }
 }
-function viikonpaiva()
+function viikonpaivat()
 {
-  var vluku = document.getElementById('vluku').value;
-  if(vluku == 1)
-  {
-    document.getElementById('tulosta2').innerHTML = "Maanantai";
-  }
-  else if(vluku == 2)
-  {
-    document.getElementById('tulosta2').innerHTML = "Tiistai";
-  }
-  else if(vluku == 3)
-  {
-    document.getElementById('tulosta2').innerHTML = "Keskiviikko";
-  }
-  else if(vluku == 4)
-  {
-    document.getElementById('tulosta2').innerHTML = "Torstai";
-  }
-  else if(vluku == 5)
-  {
-    document.getElementById('tulosta2').innerHTML = "Perjantai";
-  }
-  else if(vluku == 6)
-  {
-    document.getElementById('tulosta2').innerHTML = "Lauantai";
-  }
-  else if(vluku == 7)
-  {
-    document.getElementById('tulosta2').innerHTML = "Sunnuntai";
-  }
-  else {
-      document.getElementById('tulosta2').innerHTML = "Luku ei kuulu viikonpäivälle";
-  }
+  var vluku = parseInt(document.getElementById('vluku').value);
+    switch (vluku)
+    {
+      case 1:
+        day = "maanantai";
+        break;
+     case 2:
+        day = "tiistai";
+       break;
+     case 3:
+       day = "keskiviikko";
+       break;
+     case 4:
+       day = "torstai";
+       break;
+     case 5:
+       day = "perjantai";
+       break;
+     case 6:
+       day ="lauantai";
+       break;
+      case 7:
+        day = "sunnuntai";
+        break;
+      default:
+              document.getElementById('tulosta2').innerHTML = "Luku ei kuulu viikonpäivälle";
+              break;
+    }
+    document.getElementById('tulosta2').innerHTML = day;
 }
+
 function onkoKarkaus()
 {
   kluku = document.getElementById('kluku').value;
